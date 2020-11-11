@@ -1,5 +1,4 @@
-
-    let webstore = new Vue({
+let webstore = new Vue({
         el: '#app',
         data: {
             showPageOne: true,

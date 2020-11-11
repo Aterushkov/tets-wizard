@@ -15,18 +15,13 @@
 </head>
 <body >
 	<header>
-		<div class="container-xl containers">
-      <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-3 mb-2 rounded d-flex justify-content-between">
-        <a class="navbar-brand  blue-color info-header-tab head-font h21" href="tel:+79089091242">8 (908) 909-12-42</a>
-        <a class="navbar-brand  blue-color info-header-tab head-font h21" href="mailto:aterushkov@yandex.ru">НАПИСАТЬ ПИСЬМО</a>
-      </nav>
-		</div>
+
 	</header>
     <div class="container containers" id="app">
         <div class="row">
           <div class="col-12">
             <form id="pricing-form" name="form" action="#" method="POST" class="pricing-form">
-                <transition enter-to-class="animated fadeIn bounce delay-1s"  leave-active-class="animated fadeOut ">
+                <transition enter-to-class="animated fadeIn delay-1s"  leave-active-class="animated fadeOut ">
                     <fieldset  v-if="showPageOne" key="showPageOne" mode="out-in">'
                         <div class="col-12 text-center">
                             <h3>Выбирите валюту</h3>
