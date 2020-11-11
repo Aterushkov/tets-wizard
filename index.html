@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Тестовое задание</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body >
+	<header>
+		<div class="container-xl containers">
+      <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-3 mb-2 rounded d-flex justify-content-between">
+        <a class="navbar-brand  blue-color info-header-tab head-font h21" href="tel:+79089091242">8 (908) 909-12-42</a>
+        <a class="navbar-brand  blue-color info-header-tab head-font h21" href="mailto:aterushkov@yandex.ru">НАПИСАТЬ ПИСЬМО</a>
+      </nav>
+		</div>
+	</header>
+    <div class="container containers" id="app">
+        <div class="row">
+          <div class="col-12">
+            <form id="pricing-form" name="form" action="#" method="POST" class="pricing-form">
+                <transition enter-to-class="animated fadeIn bounce delay-1s"  leave-active-class="animated fadeOut ">
+                    <fieldset  v-if="showPageOne" key="showPageOne" mode="out-in">'
+                        <div class="col-12 text-center">
+                            <h3>Выбирите валюту</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-3">
+                                <input type="checkbox" id="assets-0" name="assets" value="Rouble" class="checkbox-input" v-model="selectOnePage">
+                                <label for="assets-0" class="chbox-label">
+                                    <div class="mark-box"><span class="checkbox-mark"></span></div>
+                                    <div class="pic-box-selected">
+                                        <i class="fa fa-rub fa-3x selected-pick" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="pic-box">
+                                        <i class="fa fa-rub fa-3x " aria-hidden="true"></i>
+                                    </div>
+                                    <div class="label-box">
+                                        Rouble
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <input type="checkbox" id="assets-1" name="assets" value="Yen" class="checkbox-input" v-model="selectOnePage">
+                                <label for="assets-1" class="chbox-label"><div class="mark-box">
+                              <span class="checkbox-mark">
+                            </span>
+                                </div>
+                                    <div class="pic-box-selected">
+                                        <i class="fa fa-jpy fa-3x selected-pick" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="pic-box">
+                                        <i class="fa fa-jpy fa-3x " aria-hidden="true"></i>
+                                    </div>
+                                    <div class="label-box">
+                                        Yen
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-3 ">
+                                <input type="checkbox" id="assets-2" name="assets" value="Dollar" class="checkbox-input" v-model="selectOnePage">
+                                <label for="assets-2" class="chbox-label"><div class="mark-box">
+                                    <span class="checkbox-mark"></span>
+                                </div>
+                                    <div class="pic-box-selected">
+                                        <i class="fa fa-usd fa-3x selected-pick" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="pic-box">
+                                        <i class="fa fa-usd fa-3x " aria-hidden="true"></i>
+                                    </div>
+                                    <div class="label-box">
+                                        Dollar
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-3">
+                                <input type="checkbox" id="assets-3" name="assets" value="Pound" class="checkbox-input" v-model="selectOnePage">
+                                <label for="assets-3" class="chbox-label"><div class="mark-box">
+                                    <span class="checkbox-mark"></span>
+                                </div>
+                                    <div class="pic-box-selected">
+                                        <i class="fa fa-gbp fa-3x selected-pick" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="pic-box">
+                                        <i class="fa fa-gbp fa-3x " aria-hidden="true"></i>
+                                    </div>
+                                    <div class="label-box">
+                                        Pound
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <input type="checkbox" id="assets-4" name="assets" value="turkish lira" class="checkbox-input" v-model="selectOnePage">
+                                <label for="assets-4" class="chbox-label">
+                                    <div class="mark-box">
+                                        <span class="checkbox-mark"></span>
+                                    </div>
+                                    <div class="pic-box-selected">
+                                        <i class="fa fa-try fa-3x selected-pick" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="pic-box">
+                                        <i class="fa fa-try fa-3x " aria-hidden="true"></i>
+                                    </div>
+                                    <div class="label-box">
+                                        Turkish lira
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <input type="checkbox" id="assets-5" name="assets" value="euro" class="checkbox-input option-other" v-model="selectOnePage">
+                                <label for="assets-5" class="chbox-label">
+                                    <div class="mark-box">
+                                        <span class="checkbox-mark"></span>
+                                    </div>
+                                    <div class="pic-box-selected">
+                                        <i class="fa fa-eur fa-3x selected-pick" ></i>
+                                    </div>
+                                    <div class="pic-box">
+                                        <i class="fa fa-eur fa-3x" ></i>
+                                    </div>
+                                    <div class="label-box">
+                                        euro
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="btn-group mt-3 col-3">
+                                <input type="button" id="nextbtn-1" name="next" value="Next" class="form-button btn-on"  v-if="checkPage(selectOnePage)" v-on:click="showPageOne = false,showPageTwo = true">
+                                <input type="button" id="nextbtn1" value="Next" class="form-button btn-off" v-else>
+                            </div>
+                            <div class="col-6">
+
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset v-else-if="showPageTwo"   key="showPageTwo" mode="out-in">
+                        <div class="col-12 text-center">
+                            <h3>Количество валюты?</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                          <div class="col-9">
+                              <input type="radio" id="assetcount-0" name="assetcount" value="1 - 2" placeholder="1 - 2" class="radio-input" v-model="order.radios">
+                              <label for="assetcount-0" class="chbox-label-sm">
+                                  <div class="mark-box">
+                            <span class="radio-mark">
+
+                            </span>
+                                  </div>
+                                  <div class="label-box-r mt-4 ml-3">
+                                      10 - 20
+                                  </div>
+                              </label>
+                          </div>
+                            <div class="col-9">
+                                <input type="radio" id="assetcount-1" name="assetcount" value="3 - 50" placeholder="3 - 50" class="radio-input" v-model="order.radios">
+                                <label for="assetcount-1" class="chbox-label-sm">
+                                    <div class="mark-box">
+                            <span class="radio-mark">
+
+                            </span>
+                                    </div>
+                                    <div class="label-box-r mt-4 ml-3">
+                                        30 - 100
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-9">
+                                <input type="radio" id="assetcount-2" name="assetcount" value="50+" placeholder="50+" class="radio-input" v-model="order.radios">
+                                <label for="assetcount-2" class="chbox-label-sm">
+                                    <div class="mark-box">
+                            <span class="radio-mark">
+
+                            </span>
+                                    </div>
+                                    <div class="label-box-r mt-4 ml-3">
+                                        100+
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="btn-group mt-3 col-3">
+                                <input type="button" id="nextbtn-2" name="next" value="Next" class="form-button btn-on"  v-if="checkPage(order.radios)" v-on:click="showPageTwo = false, showPageThree = true">
+                                <input type="button" id="nextbtn2" value="Next" class="form-button" v-else>
+                            </div>
+                            <div class="col-6">
+
+                            </div>
+                        </div>
+              </fieldset>
+                    <fieldset v-else-if="showPageThree"  key="showPageThree" mode="out-in">
+                        <div class="col-12 text-center">
+                            <h3>Выбирите бренд</h3>
+                        </div>
+                          <div class="row justify-content-center">
+                              <div class="col-3">
+                                  <input type="checkbox" id="features-0" name="features" value="Visa" class="checkbox-input" v-model="selectThreePage">
+                                  <label for="features-0" class="chbox-label">
+                                      <div class="mark-box">
+                                          <span class="checkbox-mark"></span>
+                                      </div>
+                                      <div class="pic-box-selected">
+                                          <i class="fa fa-cc-visa fa-3x selected-pick" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="pic-box">
+                                          <i class="fa fa-cc-visa fa-3x" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="label-box">
+                                          Visa
+                                      </div>
+                                  </label>
+                              </div>
+                              <div class="col-3">
+                                  <input type="checkbox" id="features-1" name="features" value="Dropbox" class="checkbox-input" v-model="selectThreePage">
+                                  <label for="features-1" class="chbox-label">
+                                      <div class="mark-box"><span class="checkbox-mark"></span>
+                                      </div>
+                                      <div class="pic-box-selected">
+                                          <i class="fa fa-dropbox fa-3x selected-pick" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="pic-box">
+                                          <i class="fa fa-dropbox fa-3x" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="label-box">
+                                          Dropbox
+                                      </div>
+                                  </label>
+                              </div>
+                              <div class="col-3 ">
+                                  <input type="checkbox" id="features-2" name="features" value="Github" class="checkbox-input" v-model="selectThreePage">
+                                  <label for="features-2" class="chbox-label">
+                                      <div class="mark-box">
+                                          <span class="checkbox-mark"></span>
+                                      </div>
+                                      <div class="pic-box-selected">
+                                          <i class="fa fa-github fa-3x selected-pick" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="pic-box">
+                                          <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="label-box">
+                                          Github
+                                      </div>
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="row justify-content-center">
+                              <div class="col-3">
+                                  <input type="checkbox" id="features-3" name="features" value="Google plus" class="checkbox-input" v-model="selectThreePage">
+                                  <label for="features-3" class="chbox-label">
+                                      <div class="mark-box">
+                                          <span class="checkbox-mark"></span>
+                                      </div>
+                                      <div class="pic-box-selected">
+                                          <i class="fa fa-google-plus fa-3x selected-pick" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="pic-box">
+                                          <i class="fa fa-google-plus fa-3x" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="label-box">
+                                          Google plus
+                                      </div>
+                                  </label>
+                              </div>
+                              <div class="col-3">
+                                  <input type="checkbox" id="features-4" name="features" value="Paypal" class="checkbox-input" v-model="selectThreePage">
+                                  <label for="features-4" class="chbox-label">
+                                      <div class="mark-box">
+                                          <span class="checkbox-mark"></span>
+                                      </div>
+                                      <div class="pic-box-selected">
+                                          <i class="fa fa-paypal fa-3x selected-pic" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="pic-box">
+                                          <i class="fa fa-paypal fa-3x " aria-hidden="true"></i>
+                                      </div>
+                                      <div class="label-box">
+                                          Paypal
+                                      </div>
+                                  </label>
+                              </div>
+                              <div class="col-3">
+                                  <input type="checkbox" id="features-5" name="features" value="Windows" class="checkbox-input option-other" v-model="selectThreePage">
+                                  <label for="features-5" class="chbox-label">
+                                      <div class="mark-box">
+                            <span class="checkbox-mark">
+                            </span>
+                                      </div>
+                                      <div class="pic-box-selected">
+                                          <i class="fa fa-windows fa-3x selected-pic" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="pic-box">
+                                          <i class="fa fa-windows fa-3x " aria-hidden="true"></i>
+                                      </div>
+                                      <div class="label-box">
+                                          Windows
+                                      </div>
+                                  </label>
+                              </div>
+                          </div>
+                        <div class="btn-div">
+
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="btn-group mt-3 col-3">
+                                <input type="button" id="nextbtn-3" name="next" value="Next" class="form-button btn-on"  v-if="checkPage(selectThreePage)" v-on:click="showPageThree=false, showPageFour=true">
+                                <input type="button" id="nextbtn3" value="Next" class="form-button" v-else>
+                            </div>
+                            <div class="col-6">
+
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset v-else-if="showPageFour"  key="showPageFour" mode="out-in">
+                        <div class="col-12 text-center">
+                            <h3>Напишите Вашу электронную почту</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-9">
+                                <div class="text-input">
+                                  <input type="email" ref="email" id="email" v-model="order.email" name="email" placeholder="email@example.com" autofocus="autofocus" required="required" class="text-input">
+                                    <div id="error" ref="error"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="btn-group mt-3 col-3">
+                                <input type="button" id="nextbtn-4" name="next" value="Next" class="form-button btn-on"  v-if="validEmail(order.email)" v-on:click="showPageFour = false, showPageFive = true">
+                                <input type="button" id="nextbtn4"  name="next" value="Next" class="form-button" v-else>
+                            </div>
+                            <div class="col-6">
+
+                            </div>
+                        </div>
+                      </fieldset>
+                    <fieldset v-else-if="showPageFive" key="showPageFive" mode="out-in">
+                        <div class="col-12 text-center">
+                            <h3>Как Ваше имя? И напишите пожалуйста еще фамилию.</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-9">
+                                <div class="text-input">
+                                  <input type="text"  ref="firstName" id="name1" name="name" v-model="order.firstName" placeholder="First Name" autofocus="autofocus" required="required" class="text-input">
+                                  <input type="text"  ref="lastName" id="name2" name="name" v-model="order.lastName" placeholder="Last Name" required="required" class="text-input">
+                                    <div id="error" ref="error"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="btn-group mt-3 col-3">
+                                <input type="button" id="nextbtn-5" name="next" value="Next" class="form-button btn-on"  v-if="checkPageName(order.firstName,order.lastName)" v-on:click="showPageFive = false, showPageSix = true">
+                                <input type="button" id="nextbtn5" value="Next" class="form-button" v-else>
+                            </div>
+                            <div class="col-6">
+
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset  v-else-if="showPageSix" key="showPageSix" mode="out-in">
+                        <div class="col-12 text-center">
+                            <h3>Как называется Ваша компания.</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-9">
+                                <div class="text-input">
+                                  <input type="text" ref="inputs"  v-model="order.company" id="company1" name="company" placeholder="Company Name" autofocus="autofocus" required="required" class="text-input">
+                                </div>
+                                <div id="error" ref="error"></div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="btn-group mt-3 col-3">
+                                <input type="button" id="nextbtn-6" name="next" value="Next" class="form-button btn-on"  v-if="checkPage(order.company)" v-on:click="showPageSix = false, showPageSeven = true">
+                                <input type="button" id="nextbtn6" value="Next" class="form-button" v-else>
+                            </div>
+                            <div class="col-6">
+
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset  v-else-if="showPageSeven" key="showPageSeven" mode="out-in">
+                        <div class="col-12 text-center">
+                            <h3>Напишите Ваш сотовый и мы Вам позвоним!</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-9">
+                                <div class="text-input">
+                                  <input type="text" ref="phone" v-model="order.phone" id="phone" name="phone" placeholder="(XXX) XXX-XXXX" autofocus="autofocus" required="required" class="text-input">
+                                    <div id="error" ref="error"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="btn-group mt-3 col-3">
+                                <input type="button" id="nextbtn-7" name="next" value="Next" class="form-button btn-on"  v-if="validPhone(order.phone)" v-on:click="showPageSeven = false, lastPage = true">
+                                <input type="button" id="nextbtn7"  value="Next" class="form-button" v-else>
+                            </div>
+                            <div class="col-6">
+
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset   v-else-if="lastPage" key="lastPage" mode="out-in">
+                        <div class="row ">
+                            <div class="col-12t ml-5">
+                                <h3>Вы указали следуюущие данные:</h3>
+                                <h4>Ваша имя и фамилия</h4>
+                                <p>{{ order.firstName + order.lastName }}</p>
+                                <h4>Ваш номер телефона</h4>
+                                <p>{{ order.phone }}</p>
+                                <h4>Ваша электронная почта</h4>
+                                <p>{{ order.email }}</p>
+                                <h4>Название вашей компании</h4>
+                                <p>{{ order.company }}</p>
+                                <h4>На первой странице вы выбрали валюту</h4>
+                                <p>{{ selectOnePage.join(', ') }}</p>
+                                <h4>На втрой странице вы выбрали количество валюты</h4>
+                                <p>{{ order.radios }}</p>
+                                <h4>На третьей странице вы выбрали бренды</h4>
+                                <p>{{ selectThreePage.join(', ') }}</p>
+                            </div>
+                        </div>
+                    </fieldset>
+                </transition>
+
+            </form>
+            </section>
+          </div>
+          </div>
+        </div>
+  <footer class="mb-5">
+    <div class="container containers text-center">
+    </div>
+  </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
